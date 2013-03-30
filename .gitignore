@@ -1,0 +1,18 @@
+.DS_Store
+* copy
+~*
+*~
+/classes
+classes
+/target
+target
+/.metadata
+.metadata
+/bin
+bin
+/gen
+gen
+/javadoc
+javadoc
+/.settings
+.settings
