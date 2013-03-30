@@ -8,6 +8,7 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="17" />
     
+    <!-- This libray needs to read/write to the SD card if available -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
