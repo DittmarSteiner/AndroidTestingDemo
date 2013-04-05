@@ -26,7 +26,7 @@ public class DemoTest extends AndroidTestCase {
 	 * Testet gegen Demo App
 	 */
 	public void testCacheHelperGetCache() {
-		String urlStr = Urls.ensureSsl("Hello");
+		String urlStr = Urls.ensureSsl("http://dittmarsteiner.com");
 		assertNotNull(urlStr);
 		assertTrue(urlStr.startsWith("https://"));
 	}
