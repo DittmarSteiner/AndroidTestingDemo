@@ -14,28 +14,30 @@
  * limitations under the License.
  */
 
-package com.example.demolibtest;
+package com.example.mylibtest.test;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
 
-/**
- * Diese Activity wird beim Packetieren nicht berücksichtigt.
- * 
- * @author dittmar
- */
-public class MainActivity extends Activity {
+import java.io.File;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+import com.example.mylib.utils.StorageUtils;
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+import android.test.AndroidTestCase;
+import android.util.Log;
+
+public class MyLibTest extends AndroidTestCase {
+
+	private static final String TAG = MyLibTest.class.getName();
+	
+	/**
+	 * Testet gegen My Lib
+	 */
+	public void testCache() {
+		File cache = StorageUtils.getCache(getContext());
+		assertNotNull(cache);
+		assertTrue(cache.exists());
+		assertTrue(cache.isDirectory());
+		
+		// nur so, um's mal zu zeigen
+		Log.d(TAG, cache.getAbsolutePath());
 	}
 }

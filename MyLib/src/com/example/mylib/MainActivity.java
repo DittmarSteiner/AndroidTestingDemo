@@ -14,28 +14,28 @@
  * limitations under the License.
  */
 
-package com.example.demolib.utils;
+package com.example.mylib;
 
-import java.io.File;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
 
-import android.content.Context;
+/**
+ * Diese Activity wird beim Packetieren nicht berücksichtigt.
+ * 
+ * @author dittmar
+ */
+public class MainActivity extends Activity {
 
-public class StorageUtils {
-	
-	/**
-	 * Verwendet das Android Device eine externe SD Card, so wird der Cache dort
-	 * verwendet. Ansonsten intern.
-	 * 
-	 * @param context
-	 * @return externer Cache oder interner
-	 */
-	public static File getCache(Context context) {
-		File cache = context.getExternalCacheDir();
-		
-		if (cache == null) {
-			cache = context.getCacheDir();
-		}
-		
-		return cache;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
 	}
 }
